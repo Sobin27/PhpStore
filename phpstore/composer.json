@@ -1,0 +1,22 @@
+{
+    "name": "sobre/phpstore",
+    "description": "loja Online em PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Sobre\\Phpstore\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jose Cavalcante",
+            "email": "jcsobreiraneto@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload-dev": {
+        "psr-4": {
+            "core\\" : "core/"
+        }
+    }
+}
