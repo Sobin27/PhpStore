@@ -6,19 +6,21 @@ use Exception;
 use PDO;
 use PDOException;
 
-class Database{
+class Database
+{
 
     private $ligacao;
-    
-    private function ligar(){
+
+    private function ligar()
+    {
 
         //liga o Banco de dados
 
         $this->ligacao = new PDO(
-            'mysql:'.
-            'host='. MYSQL_SERVER . ";".
-            'dbname='. MYSQL_DATABASE . ";" . 
-            'charset='. MYSQL_CHARTSET,
+            'mysql:' .
+                'host=' . MYSQL_SERVER . ";" .
+                'dbname=' . MYSQL_DATABASE . ";" .
+                'charset=' . MYSQL_CHARTSET,
             MYSQL_USER,
             MYSQL_PASS,
             array(PDO::ATTR_PERSISTENT => true)
@@ -28,17 +30,19 @@ class Database{
         $this->ligacao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     }
 
-    private function desligar(){
+    private function desligar()
+    {
 
         //desliga o  banco de dados
 
         $this->ligacao = null;
     }
 
-    public function select($sql, $parametros = null){
+    public function select($sql, $parametros = null)
+    {
 
         //verifica se é uma instrução SELECT
-        if(!preg_match("/^SELECT/i", $sql)){
+        if (!preg_match("/^SELECT/i", $sql)) {
             throw new Exception('Banco de dadso - Não é uma instrução SELECT.');
         }
 
@@ -50,33 +54,30 @@ class Database{
 
         try {
             //comunicar com o bd
-            if(!empty($parametros)){
+            if (!empty($parametros)) {
                 $executar = $this->ligcao->prepare($sql);
                 $executar->execute($parametros);
                 $resultados = $executar->fetchAll(PDO::FETCH_CLASS);
-            }else {
+            } else {
                 $executar = $this->ligacao->prepare($sql);
                 $executar->execute();
                 $resultados = $executar->fetchAll(PDO::FETCH_CLASS);
             }
-
         } catch (PDOException $e) {
             return false;
-            
         }
 
         $this->desligar();
 
         //devolve os resultados obtidos
         return $resultados;
-
-
     }
 
-    public function insert($sql, $parametros = null){
+    public function insert($sql, $parametros = null)
+    {
 
         //verifica se é uma instrução SELECT
-        if(!preg_match("/^INSERT/i", $sql)){
+        if (!preg_match("/^INSERT/i", $sql)) {
             throw new Exception('Banco de dadso - Não é uma instrução INSERT.');
         }
 
@@ -84,26 +85,25 @@ class Database{
 
         try {
             //comunicar com o bd
-            if(!empty($parametros)){
+            if (!empty($parametros)) {
                 $executar = $this->ligcao->prepare($sql);
                 $executar->execute($parametros);;
-            }else {
+            } else {
                 $executar = $this->ligacao->prepare($sql);
                 $executar->execute();
             }
-
         } catch (PDOException $e) {
             return false;
-            
         }
 
         $this->desligar();
     }
 
-    public function update($sql, $parametros = null){
+    public function update($sql, $parametros = null)
+    {
 
         //verifica se é uma instrução SELECT
-        if(!preg_match("/^UPDATE/i", $sql)){
+        if (!preg_match("/^UPDATE/i", $sql)) {
             throw new Exception('Banco de dadso - Não é uma instrução UPDATE.');
         }
 
@@ -111,26 +111,25 @@ class Database{
 
         try {
             //comunicar com o bd
-            if(!empty($parametros)){
+            if (!empty($parametros)) {
                 $executar = $this->ligcao->prepare($sql);
                 $executar->execute($parametros);;
-            }else {
+            } else {
                 $executar = $this->ligacao->prepare($sql);
                 $executar->execute();
             }
-
         } catch (PDOException $e) {
             return false;
-            
         }
 
         $this->desligar();
     }
 
-    public function delete($sql, $parametros = null){
+    public function delete($sql, $parametros = null)
+    {
 
         //verifica se é uma instrução SELECT
-        if(!preg_match("/^INSERT/i", $sql)){
+        if (!preg_match("/^INSERT/i", $sql)) {
             throw new Exception('Banco de dadso - Não é uma instrução DELETE.');
         }
 
@@ -138,27 +137,26 @@ class Database{
 
         try {
             //comunicar com o bd
-            if(!empty($parametros)){
+            if (!empty($parametros)) {
                 $executar = $this->ligcao->prepare($sql);
                 $executar->execute($parametros);;
-            }else {
+            } else {
                 $executar = $this->ligacao->prepare($sql);
                 $executar->execute();
             }
-
         } catch (PDOException $e) {
             return false;
-            
         }
 
         $this->desligar();
     }
 
     //função genérica
-    public function statement($sql, $parametros = null){
+    public function statement($sql, $parametros = null)
+    {
 
         //verifica se é uma instrução diferente das anteriores
-        if(preg_match("/^SELECT|INSERT|UPDATE|DELETE/i", $sql)){
+        if (preg_match("/^SELECT|INSERT|UPDATE|DELETE/i", $sql)) {
             throw new Exception('Banco de dado - INSTRUÇÃO INVÁLIDA.');
         }
 
@@ -166,26 +164,17 @@ class Database{
 
         try {
             //comunicar com o bd
-            if(!empty($parametros)){
+            if (!empty($parametros)) {
                 $executar = $this->ligcao->prepare($sql);
                 $executar->execute($parametros);;
-            }else {
+            } else {
                 $executar = $this->ligacao->prepare($sql);
                 $executar->execute();
             }
-
         } catch (PDOException $e) {
             return false;
-            
         }
 
         $this->desligar();
     }
-
-    
-
-
-
-
-
 }

@@ -2,15 +2,27 @@
 
 namespace Core\Controller;
 
-class Main{
+use core\Classes\Store;
 
-    public function index(){
-        
-        echo "deu certo";
+class Main
+{
+
+    public function index()
+    {
+        $dados = [
+            'title' => APP_NAME . " " . APP_VERSION,
+        ];
+
+        Store::Layout([
+            'Layouts/Header',
+            'pagina_inicial',
+            'Layouts/Footer',
+        ], $dados);
     }
 
-    public function testando(){
+    public function testando()
+    {
 
-        echo "O pae é mto bonito";
+        echo "deu certo 2";
     }
 }
