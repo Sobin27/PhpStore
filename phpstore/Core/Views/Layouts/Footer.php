@@ -1,7 +1,7 @@
-    <script src="Assets/Js/bootstrap.bundle.min.js"></script>
-    <script src="Assets/Js/App.js"></script>
-    <script src="Assets/Js/fontawesome.min.js"></script>
-
-    </body>
-
-    </html>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center p-3">
+            <?= APP_NAME . '('.APP_VERSION.') &copy;' . date('Y')?>
+        </div>
+    </div>
+</div>

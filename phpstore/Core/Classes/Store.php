@@ -21,4 +21,12 @@ class Store
             include("../core/Views/$structure.php");
         }
     }
+
+    public static function clientLog()
+    {
+        //Faz a verificação se existe um cliente com sessão
+        return isset($_SESSION['client']);
+    }
+
+    
 }

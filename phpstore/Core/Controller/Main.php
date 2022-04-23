@@ -11,11 +11,14 @@ class Main
     {
         $dados = [
             'title' => APP_NAME . " " . APP_VERSION,
+            
         ];
 
         Store::Layout([
+            'Layouts/Html_Header',
             'Layouts/Header',
-            'pagina_inicial',
+            'Pages/Inicio',
+            'Layouts/Html_Footer',
             'Layouts/Footer',
         ], $dados);
     }
