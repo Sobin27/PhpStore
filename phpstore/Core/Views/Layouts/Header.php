@@ -2,16 +2,13 @@
 use core\Classes\Store;
 ?>
 
-<div class="container-fluid navegation">
-    <div class="row">
-        <div class="col-6 p-3">
-            <h3>
-                <a href="/"><?= APP_NAME?></a>
-            </h3>
-        <div>
-        <div class="col-6 text-start p-3 ">
-            
-            <a href="/" class="nav-item">Ínicio</a>
+<div class="container-fluid navegacao">
+	<div class="row">
+	<div class="col 6 p-3">
+        <h3><?= APP_NAME?>
+    </div>
+	    <div class="col-6 text-end p-3">
+        <a href="/" class="nav-item">Ínicio</a> 
             <a href="/loja" class="nav-item">Loja</a>
             
             <!--Vai verificar se existe cliente na sessão-->
@@ -25,13 +22,11 @@ use core\Classes\Store;
             <?php endif;?>
 
 
-
-
             <a href="/carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
 
             <span class="badge bg-warning">10</span>
-        </div>
-    </div>
+	    </div>
+	</div>
 </div>
 
 

@@ -49,7 +49,7 @@
 
             <!--Botão para enviar formulário -->
             <div class="my-4">
-                <input type="submit" value="Criar conta" class="btn">
+                <input type="submit" value="Criar conta" class="btn btn-primary">
             </div>
 
             <?php if(isset($_SESSION['erro'])):?>

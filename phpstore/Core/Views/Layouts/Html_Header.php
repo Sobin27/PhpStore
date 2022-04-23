@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +9,5 @@
     <link rel="stylesheet" href="Assets/Css/App.css">
     <link rel="stylesheet" href="Assets/Css/all.min.css">
 </head>
-
 <body>
 
