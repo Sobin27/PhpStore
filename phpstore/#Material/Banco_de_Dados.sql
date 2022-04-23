@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           10.4.21-MariaDB - mariadb.org binary distribution
+-- Versão do servidor:           10.4.24-MariaDB - mariadb.org binary distribution
 -- OS do Servidor:               Win64
 -- HeidiSQL Versão:              11.3.0.6295
 -- --------------------------------------------------------
@@ -21,17 +21,23 @@ USE `php_store`;
 -- Copiando estrutura para tabela php_store.clientes
 DROP TABLE IF EXISTS `clientes`;
 CREATE TABLE IF NOT EXISTS `clientes` (
-  `id_cliente` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) DEFAULT NULL,
+  `id_cliente` int(10) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) DEFAULT NULL,
+  `senha` varchar(250) DEFAULT NULL,
+  `nome_completo` varchar(250) DEFAULT NULL,
+  `estado` varchar(250) DEFAULT NULL,
+  `cidade` varchar(250) DEFAULT NULL,
+  `telefone` varchar(250) DEFAULT NULL,
+  `purl` varchar(250) DEFAULT NULL,
+  `activo` tinyint(4) DEFAULT 0,
+  `created_at` datetime DEFAULT current_timestamp(),
+  `delete_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Copiando dados para a tabela php_store.clientes: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` (`id_cliente`, `nome`) VALUES
-	(1, 'GIOZIN'),
-	(2, 'JEANZINHO'),
-	(3, 'TOINZINHO');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

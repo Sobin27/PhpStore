@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h1>Pagina inicial da loja</h1>
+            <h3>Loja</h3>
         </div>
     </div>
 </div>

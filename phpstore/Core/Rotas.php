@@ -10,10 +10,28 @@ $rotas['index'] = [
     'action' => 'index'
 ];
 
-$rotas['testando'] = [
-    'rota' => '/testando',
+$rotas['loja'] = [
+    'rota' => '/loja',
     'controller' => "Main",
-    'action' => 'testando'
+    'action' => 'loja'
+];
+
+$rotas['carrinho'] = [
+    'rota' => '/carrinho',
+    'controller' => "Main",
+    'action' => 'carrinho'
+];
+
+$rotas['cadastro'] = [
+    'rota' => '/cadastro',
+    'controller' => "Main",
+    'action' => 'cadastro'
+];
+
+$rotas['criar_conta'] = [
+    'rota' => '/criar_conta',
+    'controller' => "Main",
+    'action' => 'criar_conta'
 ];
 
 

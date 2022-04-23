@@ -1,3 +1,18 @@
-.html {
-    background-color: black;
+.navegation
+{
+    background-color: rgb(154,171,194);
+    color: black ;
+}
+
+.footer
+{
+    background-color: rgb(50,171,40);
+    color: white ;
+}
+
+.nav-item:hover
+{
+    text-decoration: underline;
+    color: white;
+    margin: 0px 10px;
 }
