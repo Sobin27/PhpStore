@@ -1,6 +1,6 @@
 <?php
 
-namespace core\classes;
+namespace Core\Classes;
 
 use Exception;
 use PDO;
@@ -55,7 +55,7 @@ class Database
         try {
             //comunicar com o bd
             if (!empty($parametros)) {
-                $executar = $this->ligcao->prepare($sql);
+                $executar = $this->ligacao->prepare($sql);
                 $executar->execute($parametros);
                 $resultados = $executar->fetchAll(PDO::FETCH_CLASS);
             } else {

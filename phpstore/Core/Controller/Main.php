@@ -2,6 +2,7 @@
 
 namespace Core\Controller;
 
+use Core\Classes\Database;
 use Core\Classes\Store;
 
 class Main
@@ -74,8 +75,30 @@ class Main
             return;
         }
 
-        //criar novo cliente
+        //Verifica se as senhas estão iguais
+        if($_POST['senha'] !== $_POST['confirm_senha'])
+        {
+            $_SESSION['erro'] = 'As senhas estão diferentes';
+            $this->cadastro();
+            return;
+        }
+        //Verifica se existe email no banco de dados
+        $bd = new Database();
+        $params = [
+            ':email' => strtolower(trim($_POST['email'])),
+        ];
+        $resultados = $bd->select("SELECT email FROM clientes WHERE email = :email", $params);
+
+        if(count($resultados) != 0)
+        {
+            $_SESSION['erro'] = 'Já existe um email cadastrado!';
+            $this->cadastro();
+            return;
+        }
+
         
-    }
+
+
+    }  
 }
 
