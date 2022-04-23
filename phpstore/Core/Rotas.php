@@ -22,7 +22,7 @@ foreach ($rotas as $router) :
     if ($url === $router['rota']) :
 
 
-        $controlador = 'core\\Controller\\' . ucfirst($router['controller']);
+        $controlador = 'Core\\Controller\\' . ucfirst($router['controller']);
         $metodo = $router['action'];
 
 

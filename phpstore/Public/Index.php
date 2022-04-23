@@ -3,8 +3,6 @@
 // Abre a sessão
 session_start();
 
-require_once('../config.php');
-
 //Carrega todas as classes do projetos
 require_once('../vendor/autoload.php');
 

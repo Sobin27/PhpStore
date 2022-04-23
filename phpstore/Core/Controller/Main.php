@@ -2,7 +2,7 @@
 
 namespace Core\Controller;
 
-use core\Classes\Store;
+use Core\Classes\Store;
 
 class Main
 {
