@@ -96,9 +96,23 @@ class Main
             return;
         }
 
-        
+        //Inserir o cliente no banco de dados
+        $purl = Store::createHash();
 
+        $params = [
+            ':email' => strtolower(trim($_POST['email'])),
+            ':senha' => password_hash($_POST['senha'], PASSWORD_DEFAULT),
+            ':nome_completo' => trim($_POST['name_complet']),
+            ':cidade' => trim($_POST['cidade']),
+            ':estado' => trim($_POST['estado']),
+            ':telefone' => trim($_POST['telefone']),
+            ':purl' => $purl,
+            'activo'=> 0
+        ];
+        $bd->insert("INSERT INTO clientes VALUES(0,:email,:senha,:nome_completo,:cidade,:estado,:telefone,:purl,:activo, NOW(),NOW(),NULL)",$params);
+        
+        //Cria um link purl para enviar ao email do cliente
+        $link_purl = "localhost:8000/confirmar_email&purl=$purl";
 
     }  
 }
-

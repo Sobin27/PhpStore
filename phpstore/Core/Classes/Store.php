@@ -28,5 +28,11 @@ class Store
         return isset($_SESSION['client']);
     }
 
+    public static function createHash($num_caracters = 12)
+    {
+         $chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+         return substr(str_shuffle($chars),0,$num_caracters);
+         
+    }
     
 }

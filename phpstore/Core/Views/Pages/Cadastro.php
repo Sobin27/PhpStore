@@ -26,7 +26,7 @@
             <!--Nome Completo -->
              <div class="my-3">
                 <label for="">Nome Completo</label>
-                <input type="text" name="name_completo" placeholder="Name Completo" class="form-control" required>
+                <input type="text" name="name_complet" placeholder="Name Completo" class="form-control" required>
             </div>
 
             <!--Cidade -->

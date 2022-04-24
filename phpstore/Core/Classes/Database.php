@@ -86,7 +86,7 @@ class Database
         try {
             //comunicar com o bd
             if (!empty($parametros)) {
-                $executar = $this->ligcao->prepare($sql);
+                $executar = $this->ligacao->prepare($sql);
                 $executar->execute($parametros);;
             } else {
                 $executar = $this->ligacao->prepare($sql);
