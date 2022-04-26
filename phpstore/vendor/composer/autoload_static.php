@@ -15,6 +15,10 @@ class ComposerStaticInitf86c180514b3ef45c73d0c24bb51573b
         array (
             'Sobre\\Phpstore\\' => 15,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'C' => 
         array (
             'Core\\' => 5,
@@ -25,6 +29,10 @@ class ComposerStaticInitf86c180514b3ef45c73d0c24bb51573b
         'Sobre\\Phpstore\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Core\\' => 
         array (
