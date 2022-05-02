@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "phpmailer/phpmailer": "^6.6"
+        "phpmailer/phpmailer": "^6.5"
     },
     "autoload-dev": {
         "psr-4": {

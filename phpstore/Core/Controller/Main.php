@@ -3,6 +3,7 @@
 namespace Core\Controller;
 
 use Core\Classes\Database;
+use Core\Classes\SendEmail;
 use Core\Classes\Store;
 use Core\Models\Clientes;
 
@@ -11,7 +12,9 @@ class Main
 
     public function index()
     {
-
+       $email = new SendEmail();
+       $email->enviar_email_confirm();
+       die();
         Store::Layout([
             'Layouts/Html_Header',
             'Layouts/Header',
